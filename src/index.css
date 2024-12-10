@@ -72,3 +72,7 @@ nav .active {
 * {
     box-sizing: border-box;
 }
+
+ul {
+    text-decoration: none;
+}
