@@ -1,14 +1,14 @@
-import Navbar from "../components/Navbar";
 
-export default function Products() {
+export default function Posts() {
 
     return (
 
-        <div>
-            <Navbar />
-            <div>
-                Posts
-            </div>
-        </div>
+        <main>
+            <section>
+                <h1>Posts</h1>
+            </section>
+        </main>
     )
 }
+
+

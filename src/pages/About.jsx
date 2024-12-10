@@ -1,15 +1,15 @@
-import Navbar from "../components/Navbar";
 
 export default function About() {
 
     return (
 
-        <div>
-            <Navbar />
-            <div>
-                about
-            </div>
-        </div>
+
+        <main>
+            <section>
+                <h1>Chi siamo</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </section>
+        </main>
 
     )
 }

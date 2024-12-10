@@ -29,3 +29,14 @@
 .navLink:hover {
     text-decoration: underline;
 }
+
+.navLink {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.active {
+    color: yellow;
+    text-decoration: underline;
+}
