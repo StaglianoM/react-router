@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { BASE_URI } from '../../../config';
 import styles from './post.module.css';
+import DeletePosts from '../Delete/DeletePosts';
 
 export default function Posts() {
     const [posts, setPosts] = useState([]);
@@ -18,6 +19,11 @@ export default function Posts() {
 
     const NavigateToCreate = () => {
         navigate('/posts/create');
+    };
+
+    // Rimuovo il post dalla lista quando viene eliminato
+    const handleDelete = (id) => {
+        setPosts(posts.filter(post => post.id !== id));
     };
 
     return (
@@ -38,6 +44,8 @@ export default function Posts() {
                         >
                             Leggi di più
                         </button>
+
+                        <DeletePosts id={post.id} onDelete={() => handleDelete(post.id)} />
                     </div>
                 ))}
             </div>

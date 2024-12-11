@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { BASE_URI } from '../../config';
 import placeHolderImage from '../../assets/card600.jpg';
-import DeletePosts from '../../components/posts/DeletePosts';
+import DeletePosts from '../../components/posts/Delete/DeletePosts';
 
 export default function Show() {
     const [post, setPost] = useState(null);

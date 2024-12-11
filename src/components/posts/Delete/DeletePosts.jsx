@@ -1,34 +1,26 @@
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import { BASE_URI } from '../../config';
+import { BASE_URI } from '../../../config';
+import style from './deletePosts.module.css';
 
 export default function DeletePosts({ onDelete = () => { }, id }) {
-
-    function deletePosts() {
-        if (confirm('Vuoi eliminare il post?')) {
-            console.log('delete post', id);
+    const deletePosts = () => {
+        if (confirm('Sei sicuro di voler eliminare questo post?')) {
             axios.delete(`${BASE_URI}/posts/${id}`)
                 .then(() => {
                     onDelete();
                 })
                 .catch(err => {
-                    alert('Non è stato possibile eliminare il post');
+                    alert('Errore nella cancellazione del post');
                     console.error(err);
                 });
         }
-    }
+    };
 
     return (
-        <button onClick={deletePosts}>Delete</button>
+        <button className={style.deleteButton} onClick={deletePosts}>Delete</button>
     );
 }
-
-
-
-
-
-
-
 
 DeletePosts.propTypes = {
     onDelete: PropTypes.func,

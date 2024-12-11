@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { BASE_URI } from '../../../config';
 import { Link } from 'react-router-dom';
-import DeletePosts from '../DeletePosts';
+import DeletePosts from '../Delete/DeletePosts';
 import style from './Card.module.css';
 import placeHolderImage from '../../../assets/card600.jpg';
 

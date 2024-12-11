@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { BASE_URI } from "../../config";
 import { useNavigate } from "react-router-dom";
+import style from "../../components/Create.module.css"
 
 const initialFormData = {
     title: "",
@@ -45,15 +46,15 @@ export default function Create() {
     }
 
     return (
-        <main>
+        <main className={style.main}>
             <section>
-                <div className="container">
-                    <h1 className="title">Nuovo Post</h1>
+                <div className={style.container}>
+                    <h1 className={style.title}>Nuovo Post</h1>
                 </div>
-                <div className="container">
-                    <form onSubmit={savePosts}>
-                        <p className="form-group">
-                            <label htmlFor="title">Titolo</label>
+                <div className={style.container}>
+                    <form onSubmit={savePosts} className={style.form}>
+                        <p>
+                            <label htmlFor="title" className={style.label}>Titolo</label>
                             <input
                                 onChange={handleFormData}
                                 type="text"
@@ -61,10 +62,11 @@ export default function Create() {
                                 name="title"
                                 placeholder="Titolo del post"
                                 value={formData.title}
+                                className={style.input}
                             />
                         </p>
-                        <p className="form-group">
-                            <label htmlFor="slug">Slug</label>
+                        <p>
+                            <label htmlFor="slug" className={style.label}>Slug</label>
                             <input
                                 onChange={handleFormData}
                                 type="text"
@@ -72,20 +74,22 @@ export default function Create() {
                                 name="slug"
                                 placeholder="Slug del post"
                                 value={formData.slug}
+                                className={style.input}
                             />
                         </p>
-                        <p className="form-group">
-                            <label htmlFor="content">Contenuto</label>
+                        <p>
+                            <label htmlFor="content" className={style.label}>Contenuto</label>
                             <textarea
                                 onChange={handleFormData}
                                 id="content"
                                 name="content"
                                 placeholder="Contenuto del post"
                                 value={formData.content}
+                                className={style.textarea}
                             />
                         </p>
-                        <p className="form-group">
-                            <label htmlFor="image">Immagine</label>
+                        <p>
+                            <label htmlFor="image" className={style.label}>Immagine</label>
                             <input
                                 onChange={handleFormData}
                                 type="text"
@@ -93,10 +97,11 @@ export default function Create() {
                                 name="image"
                                 placeholder="URL immagine"
                                 value={formData.image}
+                                className={style.input}
                             />
                         </p>
-                        <p className="form-group">
-                            <label htmlFor="tags">Tag</label>
+                        <p>
+                            <label htmlFor="tags" className={style.label}>Tag</label>
                             <input
                                 onChange={handleFormData}
                                 type="text"
@@ -104,19 +109,21 @@ export default function Create() {
                                 name="tags"
                                 placeholder="Tag separati da virgola"
                                 value={formData.tags}
+                                className={style.input}
                             />
                         </p>
-                        <p className="form-group-checkbox">
+                        <p className={style.formGroupCheckbox}>
                             <input
                                 onChange={handleFormData}
                                 type="checkbox"
                                 id="is-available"
                                 name="isAvailable"
                                 checked={formData.isAvailable}
+                                className={style.checkbox}
                             />
-                            <label htmlFor="is-available">Disponibile</label>
+                            <label htmlFor="is-available" className={style.label}>Disponibile</label>
                         </p>
-                        <button type="submit">Salva</button>
+                        <button type="submit" className={style.button}>Salva</button>
                     </form>
                 </div>
             </section>
