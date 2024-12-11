@@ -8,6 +8,8 @@ import placeHolderImage from '../../../assets/card600.jpg';
 function Card({ onDelete = () => { }, className, post = {} }) {
     const { title, image, id } = post;
 
+
+
     return (
         <div className={`${style.card} ${className}`}>
             <div className={style.image}>

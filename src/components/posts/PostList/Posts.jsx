@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { BASE_URI } from '../../../config';
+import styles from './post.module.css';
 
 export default function Posts() {
     const [posts, setPosts] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         axios.get(`${BASE_URI}/posts`)
@@ -14,16 +16,25 @@ export default function Posts() {
             .catch((err) => console.error('Errore nel recupero dei posts:', err));
     }, []);
 
+    const handleReadMore = (postId) => {
+        navigate(`/posts/${postId}`);
+    };
+
     return (
         <div>
-            <h1>Elenco dei Post</h1>
-            <div className="post-list">
-                {posts.map((posts) => (
-                    <div key={posts.id} className="posts-card">
-                        <h2>{posts.title}</h2>
-                        <img src={`${BASE_URI}/${posts.image}`} alt={posts.title} />
-                        <p>{posts.content.substring(0, 100)}...</p>
-                        <Link to={`/posts/${posts.id}`}>Leggi di più</Link>
+            <h1 className={styles.postTitle}>Elenco dei Post</h1>
+            <div className={styles.postList}>
+                {posts.map((post) => (
+                    <div key={post.id} className={styles.postsCard}>
+                        <h2>{post.title}</h2>
+                        <img src={`${BASE_URI}/${post.image}`} alt={post.title} />
+                        <p>{post.content.substring(0, 100)}...</p>
+                        <button
+                            className={styles.readMoreButton}
+                            onClick={() => handleReadMore(post.id)}
+                        >
+                            Leggi di più
+                        </button>
                     </div>
                 ))}
             </div>

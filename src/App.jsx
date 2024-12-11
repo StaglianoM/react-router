@@ -14,6 +14,8 @@ import PostsIndex from './pages/posts/Show'
 import PostsShow from './pages/posts/Index'
 import PostsCreate from './pages/posts/Create'
 
+
+
 function App() {
   return (
     <BrowserRouter>
