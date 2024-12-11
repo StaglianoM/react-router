@@ -26,6 +26,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/posts" element={<Posts />} />
           <Route path="/posts/:id" element={<PostDetails />} /> {/* Dettaglio post */}
+          <Route path="/posts/create" element={<PostsCreate />} />
 
         </Route>
 

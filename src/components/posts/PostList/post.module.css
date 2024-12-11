@@ -142,3 +142,23 @@
     background-color: #f5f83b;
     color: black;
 }
+
+
+/* Create Button */
+
+.createPostButton {
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.createPostButton:hover {
+    background-color: #eeff53;
+    color: black;
+}

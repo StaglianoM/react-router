@@ -16,13 +16,16 @@ export default function Posts() {
             .catch((err) => console.error('Errore nel recupero dei posts:', err));
     }, []);
 
-    const handleReadMore = (postId) => {
-        navigate(`/posts/${postId}`);
+    const NavigateToCreate = () => {
+        navigate('/posts/create');
     };
 
     return (
         <div>
             <h1 className={styles.postTitle}>Elenco dei Post</h1>
+            <button className={styles.createPostButton} onClick={NavigateToCreate}>
+                Crea Nuovo Post
+            </button>
             <div className={styles.postList}>
                 {posts.map((post) => (
                     <div key={post.id} className={styles.postsCard}>
@@ -31,7 +34,7 @@ export default function Posts() {
                         <p>{post.content.substring(0, 100)}...</p>
                         <button
                             className={styles.readMoreButton}
-                            onClick={() => handleReadMore(post.id)}
+                            onClick={() => navigate(`/posts/${post.id}`)}
                         >
                             Leggi di più
                         </button>
