@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { BASE_URI } from '../config';
+import { BASE_URI } from '../../../config';
 
 export default function Posts() {
     const [posts, setPosts] = useState([]);

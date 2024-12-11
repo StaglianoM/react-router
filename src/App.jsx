@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from './pages/Home';
 import About from './pages/About';
-import Posts from './components/Posts';
-import PostDetails from "./components/PostsDetails";
+import Posts from '../src/components/posts/PostList/Posts';
+import PostDetails from "../src/components/posts/PostList/PostsDetails";
 
 
 import DefaultLayout from './layouts/DefaultLayout';
